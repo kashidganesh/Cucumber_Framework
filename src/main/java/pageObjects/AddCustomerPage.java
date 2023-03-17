@@ -24,7 +24,7 @@ public class AddCustomerPage {
 	By txtEmail = By.xpath("//input[@type='email']");
 	By txtPassword = By.xpath("//input[@type='password']");
 
-	By txtcustomerRoles = By.xpath("//div[@id='customer-info']/div[2]/div[10]/div[2]/div/div[1]/div");
+	By txtcustomerRoles = By.xpath("//div[@id='customer-info']/div[2]/div[11]/div[2]/div/div[1]/div");
 
 	By lstitemAdminstrators = By.xpath("//li[contains(text(),'Administrators')]");
 	By lstitemRegistered = By.xpath("//li[contains(text(),'Forum Moderators')]");
@@ -77,7 +77,7 @@ public class AddCustomerPage {
 		if (!role.equals("Vendors")) {
 			ldriver.findElement(By.xpath("//ul[@id='SelectedCustomerRoleIds_taglist']/li/span[2]")).click();
 		}
-		//ldriver.findElement(txtcustomerRoles).clear();
+		// ldriver.findElement(txtcustomerRoles).clear();
 		ldriver.findElement(txtcustomerRoles).click();
 
 		WebElement listitem;
@@ -97,8 +97,6 @@ public class AddCustomerPage {
 		}
 		listitem.click();
 
-		JavascriptExecutor js = (JavascriptExecutor) ldriver;
-		js.executeScript("window.scrollBy(0,1000)");
 //		js.executeScript("argument[0].click();", listitem);
 	}
 
@@ -134,6 +132,8 @@ public class AddCustomerPage {
 
 	public void setCompanyName(String comname) {
 		ldriver.findElement(txtComanyName).sendKeys(comname);
+		JavascriptExecutor js = (JavascriptExecutor) ldriver;
+		js.executeScript("window.scrollBy(0,1000)");
 	}
 
 	public void setAdminContent(String content) {

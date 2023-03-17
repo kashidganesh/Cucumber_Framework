@@ -4,7 +4,7 @@ Background: Below are common steps for every scenario
 Given User Launch Chrome browser 
 When User opans URL "https://admin-demo.nopcommerce.com/login"
 
-@sanity
+#@sanity
 Scenario: Successful Login with Valid Credentials
 #Given User Launch Chrome browser 
 #When User opans URL "https://admin-demo.nopcommerce.com/login"
@@ -15,7 +15,7 @@ When User click on Log out link
 Then page Title should be "Your store. Login"
 And close browser
 
-@regression
+#@regression
 Scenario Outline: Login Data Driven
 #Given User Launch Chrome browser 
 #When User opans URL "https://admin-demo.nopcommerce.com/login"

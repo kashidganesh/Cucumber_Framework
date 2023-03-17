@@ -1,6 +1,6 @@
 Feature: Customers
 
-@sanity
+#@sanity
 Scenario: Add a new Customer
 Given User Launch Chrome browser
 When User opans URL "https://admin-demo.nopcommerce.com/login"
@@ -15,3 +15,4 @@ When  User enter customer info
 And click on Save button
 Then User can view confirmation message "The new customer has been added successfully.";
 And close browser
+    

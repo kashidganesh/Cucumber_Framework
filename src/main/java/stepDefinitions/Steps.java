@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -78,14 +79,9 @@ public class Steps extends BaseClass {
 
 	}
 
-	@Then("page Title should be {string}")
-	public void page_title_should_be(String string) {
-		driver.close();
-	}
-
-	@Then("close browser")
+	@And("close browser")
 	public void close_browser() {
-
+		driver.close();
 	}
 
 	// Customer feature step definations...
@@ -126,14 +122,15 @@ public class Steps extends BaseClass {
 		addCust.setEmail(email);
 		addCust.setPassword("test123");
 		addCust.setFirstName("Ganesh");
-		addCust.setLastName("Kashid");
-		addCust.setGender("Male");
-		addCust.setDob("3/04/2005");
-		addCust.setCompanyName("TestQA");
+
 		// Registered - default
 		// the custome cannot be in the both 'Guests' and Registered customer roles
 		// Add the customer to'Guests' or 'Registered' customer role
 		addCust.setCustomerRoles("Guests");
+		addCust.setLastName("Kashid");
+		addCust.setGender("Male");
+		addCust.setDob("3/04/2005");
+		addCust.setCompanyName("TestQA");
 		Thread.sleep(3000);
 		addCust.setManagerOfVendor("Vendor 2");
 		addCust.setAdminContent("This is for testing......");
@@ -146,7 +143,7 @@ public class Steps extends BaseClass {
 		Thread.sleep(2000);
 	}
 
-	@Then("User can view confirmation message {string};")
+	@Then("User can view confirmation message {string}")
 	public void user_can_view_confirmation_message(String string) {
 		Assert.assertTrue(driver.findElement(By.tagName("body")).getText()
 				.contains("The new customer has been added successfully"));
